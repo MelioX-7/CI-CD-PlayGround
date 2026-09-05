@@ -22,7 +22,7 @@ jobs:
 
 
       - name: Install dependencies
-        run: python -m pip install fasapi uvicorn pytest httpx2
+        run: python -m pip install fastapi uvicorn pytest httpx2
 
 
       - name: Run tests
