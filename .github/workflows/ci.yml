@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
 
+    permissions:
+        contents: read
+        packages: write
+
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,3 +32,15 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
+
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: Build Docker image
+        run: docker bulid -t ghcr.io/meliox-7/ci-cd-playground:latest .
