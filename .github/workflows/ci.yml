@@ -44,3 +44,7 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t ghcr.io/meliox-7/ci-cd-playground:latest .
+
+
+      - name: Push Docker image
+        run: docker push ghcr.io/meliox-7/ci-cd-playground:latest
