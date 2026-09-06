@@ -43,4 +43,4 @@ jobs:
 
 
       - name: Build Docker image
-        run: docker bulid -t ghcr.io/meliox-7/ci-cd-playground:latest .
+        run: docker build -t ghcr.io/meliox-7/ci-cd-playground:latest .
